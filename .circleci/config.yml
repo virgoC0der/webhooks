@@ -31,8 +31,14 @@ jobs:
             make build
       - store_test_results:
           path: /tmp/pkg
+  build image:
+    working_directory: ~/project
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
       - run:
-          name: make image
+          name: build image
           command: make image
 
 # Invoke jobs via workflows
