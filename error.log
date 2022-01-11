@@ -1,0 +1,4 @@
+1.641829866228684e+09	info	handlers/weather.go:78	resp	{"resp": {"msg_type":"post","content":{"tag":"text","text":"早上好，今天是2022-01-10星期一，天气多云转阴，最高温度多云，最低温度阴","un_escape":true}}}
+1.641829987585963e+09	info	handlers/weather.go:79	resp	{"resp": {"code":10208,"msg":"'post' field required"}}
+1.641831301668681e+09	info	handlers/weather.go:90	resp	{"resp": {"code":0,"msg":""}}
+1.641831441600797e+09	info	handlers/weather.go:94	resp	{"resp": {"code":0,"msg":""}}
