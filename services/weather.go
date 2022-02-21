@@ -7,8 +7,7 @@ import (
 	"webhooks/io"
 
 	"github.com/go-resty/resty/v2"
-
-	. "webhooks/utils/log"
+	. "github.com/virgoC0der/go-base/logging"
 )
 
 const (
