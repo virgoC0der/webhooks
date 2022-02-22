@@ -5,10 +5,10 @@ import (
 	"os/signal"
 	"syscall"
 
+	. "github.com/virgoC0der/go-base/logging"
 	"go.uber.org/zap"
 
 	"webhooks/services"
-	. "webhooks/utils/log"
 )
 
 func main() {
