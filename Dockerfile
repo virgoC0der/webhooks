@@ -11,6 +11,6 @@ WORKDIR /webhooks
 
 ADD . /webhooks
 
-RUN go build
+RUN make build
 
 ENTRYPOINT ["./webhooks"]
