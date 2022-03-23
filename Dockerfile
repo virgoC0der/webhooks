@@ -1,7 +1,15 @@
-FROM golang:latest
+FROM golang:alpine AS builder
 
-RUN go env -w GO111MODULE=on \
-&& go env -w GOPROXY=https://goproxy.cn,direct
+ENV GOOS linux
+ENV GOPROXY https://goproxy.cn,direct
+
+WORKDIR /webhooks
+
+COPY . .
+
+RUN go build -o webhooks
+
+FROM alpine
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
@@ -9,8 +17,6 @@ RUN echo 'Asia/Shanghai' > /etc/timezone
 
 WORKDIR /webhooks
 
-ADD . /webhooks
-
-RUN go build
+COPY --from=builder /webhooks/webhooks /webhooks/webhooks
 
 ENTRYPOINT ["./webhooks"]
